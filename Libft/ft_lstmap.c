@@ -6,7 +6,7 @@
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 12:04:58 by aaleixo-          #+#    #+#             */
-/*   Updated: 2024/04/22 16:47:53 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2024/04/22 18:06:26 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	free_int(void *num)
 {
 	free(num);
 }
-
+/*
 int	main(void)
 {
 	t_list *head = malloc(sizeof(t_list));
@@ -106,4 +106,4 @@ int	main(void)
 	printf("\n");
 	free(new_list);
 	return (0);
-}
+}*/
