@@ -6,7 +6,7 @@
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:03:33 by aaleixo-          #+#    #+#             */
-/*   Updated: 2024/04/11 14:36:27 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:03:15 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,20 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 /*
 #include <stdio.h>
 
-char	my_func(unsigned int i, char str)
+char	up(unsigned int i, char str)
 {
-	printf("test: index = %d and %c\n", i, str);
-	return (str - 32);
+	printf("index = %d and %c\n", i, str);
+	if (str >= 'a' && str <= 'z')
+		return (str - 32);
+	return (str);
 }
 int	main(void)
 {
-	char	str[10] = "hello.";
-	char	*result;
+	char str[] = "boas pessoal";
+	char *result;
 
 	printf("The test is %s\n", str);
-	result = ft_strmapi(str, my_func);
+	result = ft_strmapi(str, up);
 	printf("The result is %s\n", result);
 	return (0);
-}
-*/
+} */

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:46:32 by aaleixo-          #+#    #+#             */
-/*   Updated: 2024/04/22 13:58:41 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:22:44 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ int	main(void)
 	t_list	*current;
 
 	node1 = (t_list *)malloc(sizeof(t_list));
-	node1->content = strdup("Node 1");
+	node1->content = ft_strdup("Node 1");
 	node1->next = NULL;
 	node2 = (t_list *)malloc(sizeof(t_list));
-	node2->content = strdup("Node 2");
+	node2->content = ft_strdup("Node 2");
 	node2->next = NULL;
 	node1->next = node2;
 	printf("Lista sem ser apagada:\n");

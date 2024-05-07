@@ -6,7 +6,7 @@
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:09:43 by aaleixo-          #+#    #+#             */
-/*   Updated: 2024/04/09 15:59:52 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:05:20 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,20 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*hay;
 	char	*ptr;
 
-	i = 0;
+	i = -1;
 	hay = (char *)s;
-	ptr = (char *)malloc((len + 1) * sizeof(char));
+	if (ft_strlen(s) < start)
+		return (ft_calloc(1, 1));
+	else if (s[start + 1] == '\0')
+		ptr = (char *)malloc(2);
+	else if (len < (ft_strlen(s) + 1))
+		ptr = (char *)malloc(len + 1);
+	else
+		ptr = (char *)malloc(ft_strlen(s) + 1);
 	if (ptr == NULL)
 		return (NULL);
-	while (i < len)
-	{
+	while (s[++i] != '\0' && i < len && s[start] != '\0')
 		ptr[i] = hay[start + i];
-		i++;
-	}
 	ptr[i] = '\0';
 	return (ptr);
 }
@@ -36,11 +40,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 int	main(void)
 {
-	char haystack[] = "wiwi lala ugauga bonga bonga";
+	char *sub = ft_substr("tripouille", 0, 42000);
 
-	char *substring = ft_substr(pog, 0, 0);
-
-	printf("%s\n", substring);
-	free(substring);
+	printf("%s\n", sub);
+	free(sub);
 	return (0);
-}*/
+} */

@@ -6,7 +6,7 @@
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:36:39 by aaleixo-          #+#    #+#             */
-/*   Updated: 2024/04/11 15:16:54 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:33:19 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,21 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 /*
 #include <stdio.h>
 
-void	test(unsigned int index, char *c)
+void	up(unsigned int i, char *str)
 {
-	printf("Index: %u, Character: %c\n", index, *c);
+	printf("index = %d and %c\n", i, *str);
+	if (*str >= 'a' && *str <= 'z')
+		*str -= 32;
 }
 
 int	main(void)
 {
-	char str[] = "Hello, world!";
+	char str[] = "Boas pessoal";
 
 	printf("Original string: %s\n", str);
 
-	ft_striteri(str, &test);
+	ft_striteri(str, &up);
 
+	printf("%s\n", str);
 	return (0);
-}*/
+} */

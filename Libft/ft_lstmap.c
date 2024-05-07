@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 12:04:58 by aaleixo-          #+#    #+#             */
-/*   Updated: 2024/04/22 18:06:26 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:22:57 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_list);
 }
-
+/*
 void	*add_one(void *num)
 {
 	int	*val;
@@ -58,7 +58,7 @@ void	free_int(void *num)
 {
 	free(num);
 }
-/*
+
 int	main(void)
 {
 	t_list *head = malloc(sizeof(t_list));

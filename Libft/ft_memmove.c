@@ -6,7 +6,7 @@
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:37:25 by aaleixo-          #+#    #+#             */
-/*   Updated: 2024/04/22 16:22:22 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:34:33 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,41 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*ptrsrc;
-	char	*ptrdest;
-	char	temp[n];
-	size_t	i;
+	unsigned const char	*ptrsrc;
+	unsigned char		*ptrdest;
+	size_t				i;
 
-	ptrsrc = (char *)src;
-	ptrdest = (char *)dest;
+	ptrsrc = (unsigned const char *)src;
+	ptrdest = (unsigned char *)dest;
 	i = 0;
-	while (i < n)
+	if (ptrdest > ptrsrc)
 	{
-		temp[i] = ptrsrc[i];
-		i++;
+		while (n-- > 0)
+			ptrdest[n] = ptrsrc[n];
 	}
-	i = 0;
-	while (i < n)
+	else
 	{
-		ptrdest[i] = temp[i];
-		i++;
+		while (i < n)
+		{
+			ptrdest[i] = ptrsrc[i];
+			i++;
+		}
 	}
-	ptrdest = '\0';
-	return (dest);
+	return (ptrdest);
 }
 /*
 #include <stdio.h>
 
 int	main(void)
 {
-	char teste1[] = "banana";
-	char teste2[] = "batata";
+	char src[] = "Panquecas com chocolate";
+	char *dest;
+	int arg;
 
-	printf("%s\n", ft_memmove(teste1, teste2, 3));
-	printf("%s\n", memmove(teste1, teste2, 3));
-}*/
+	dest = src + 1;
+	ft_memmove(dest, "Banana", 6);
+	printf("%s\n", dest);
+	memmove(dest, "Banana", 6);
+	printf("%s\n", dest);
+	return (0);
+} */

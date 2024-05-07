@@ -6,36 +6,41 @@
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 17:27:04 by aaleixo-          #+#    #+#             */
-/*   Updated: 2024/04/09 18:25:22 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:01:12 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+static int	set_verify(const char c, const char *set)
 {
-	char			*ptr;
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	max;
+	int	i;
 
 	i = 0;
-	j = 0;
-	max = strlen(s1);
 	while (set[i] != '\0')
 	{
-		if (s1[0] == set[i])
-			j++;
-		if (s1[ft_strlen(s1) - 1] == set[i])
-			max = ft_strlen(s1) - 1;
+		if (set[i] == c)
+			return (1);
 		i++;
 	}
-	ptr = (char *)malloc((max - j) * sizeof(char));
-	if (ptr == NULL)
-		return (NULL);
+	return (0);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	i;
+	size_t	j;
+	char	*ptr;
+
 	i = 0;
-	while (j < max)
-		ptr[i++] = s1[j++];
+	j = ft_strlen(s1);
+	while (s1[i] != '\0' && (set_verify(s1[i], set) == 1))
+		i++;
+	while (s1[j - 1] != '\0' && (set_verify(s1[j - 1], set) == 1))
+		j--;
+	if (i - j == i)
+		return (ft_calloc(1, 1));
+	ptr = ft_substr(s1, (unsigned int)i, j - i);
 	return (ptr);
 }
 /*
@@ -43,9 +48,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 int	main(void)
 {
-	char pog[] = "#ABC-_-3DEF89&*";
-	char set[] = "-*#&";
-
-	char *ptr = ft_strtrim(pog, set);
-	printf("%s\n", ptr);
-}*/
+	char *strtrim;
+	char s1[] = "-_-##-_-";
+	strtrim = ft_strtrim(s1, " -_#");
+	printf("%s", strtrim);
+	return (0);
+} */

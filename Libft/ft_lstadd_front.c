@@ -6,7 +6,7 @@
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:49:17 by aaleixo-          #+#    #+#             */
-/*   Updated: 2024/04/22 15:00:05 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:28:26 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,6 @@ int	main(void)
 	t_list *node1 = (t_list *)malloc(sizeof(t_list));
 	t_list *node2 = (t_list *)malloc(sizeof(t_list));
 	t_list *node3 = (t_list *)malloc(sizeof(t_list));
-
-	if (!node1 || !node2 || !node3)
-	{
-		printf(stderr, "Memory allocation failed\n");
-		free(node1);
-		free(node2);
-		free(node3);
-		return (NULL);
-	}
 
 	node1->content = strdup("Primeiro");
 	node1->next = NULL;

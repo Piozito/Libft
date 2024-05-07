@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 12:03:04 by aaleixo-          #+#    #+#             */
-/*   Updated: 2024/04/22 15:06:13 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:22:48 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ void	print_content(void *content)
 int	main(void)
 {
 	t_list *node1 = (t_list *)malloc(sizeof(t_list));
-	node1->content = strdup("Node 1");
+	node1->content = ft_strdup("Node 1");
 	node1->next = NULL;
 
 	t_list *node2 = (t_list *)malloc(sizeof(t_list));
-	node2->content = strdup("Node 2");
+	node2->content = ft_strdup("Node 2");
 	node2->next = NULL;
 
 	node1->next = node2;
