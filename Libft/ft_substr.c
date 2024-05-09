@@ -6,7 +6,7 @@
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:09:43 by aaleixo-          #+#    #+#             */
-/*   Updated: 2024/05/07 13:05:20 by aaleixo-         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:36:48 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 int	main(void)
 {
-	char *sub = ft_substr("tripouille", 0, 42000);
+	char *sub = ft_substr("boas boas ", 0, 99999);
 
 	printf("%s\n", sub);
 	free(sub);
